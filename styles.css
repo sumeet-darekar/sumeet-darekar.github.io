@@ -3,27 +3,26 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: 'Poppins', sans-serif; /* Added font-family */
-
 }
 
 .background-container {
   position: relative;
   height: 100vh;
-  overflow: hidden;
+
 }
 
 .blur-background {
-  background: url('https://cdn.staticcrate.com/stock-hd/effects/footagecrate-low-poly-background-black-wall-effect-lg.jpg');
+  background: url('https://wallpapercave.com/wp/wp2533040.jpg');
   background-size: cover;
-  filter: blur(5px);
-  position: absolute;
+  filter: blur(2px);
+  position: fixed;
   width: 100%;
   height: 100%;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -60,7 +59,8 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 1.3em; /* Adjust the font size for smaller screens */
+    font-size: 1.5em; /* Adjust the font size for smaller screens */
+
   }
 
   ul {
@@ -70,4 +70,38 @@ a:hover {
   .socials li {
     margin: 0 5px;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .blur-background {
+    background: url('https://cdn.pixabay.com/photo/2020/12/20/04/06/man-5846064_1280.jpg');
+    background-size: cover;
+    filter: blur(1px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-position: 70% 0;
+  }
+
+  .content{
+    padding-bottom: 100px;
+  }
+  .resp {
+    overflow: auto;
+  }
+.card{
+  width: 300px;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+
+}
+
+
+
+.resp{
+  overflow: auto;
+}
+.card-deck{
+  margin-top: 100px;
 }
