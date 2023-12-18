@@ -74,7 +74,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .blur-background {
-    background: url('https://img.freepik.com/free-photo/dark-grunge-texture_1048-11833.jpg?w=740&t=st=1702895416~exp=1702896016~hmac=c4593709c32ebcd4ccd57ebe5ab86c2eedf26bd5c0afb96aceba1bd272adf094');
+    background: url('https://img.freepik.com/free-photo/dry-leaves-dark-background_23-2148207088.jpg?w=740&t=st=1702895676~exp=1702896276~hmac=6b61c18bc06b2dba9caa112671ff600215b724298db4cd1a9c98a019ea47a6e3');
     background-size: cover;
     filter: blur(1px);
     position: fixed;
