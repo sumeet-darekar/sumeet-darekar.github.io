@@ -74,7 +74,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .blur-background {
-    background: url('https://img.freepik.com/free-photo/dark-black-abstract-background-with-wood-chips_24972-208.jpg?w=740&t=st=1702900594~exp=1702901194~hmac=16739440fb0ccd77dd61a0f5336eacabfa1f2c6f024f85cba5dd6f06074633aa');
+    background: url('https://w0.peakpx.com/wallpaper/757/974/HD-wallpaper-dark-bongo-cat-meme-black-cat-dark-car-dark-black-dark-bongo-bongo-cat.jpg');
     background-size: cover;
     filter: blur(1px);
     position: fixed;
@@ -91,12 +91,14 @@ a:hover {
   }
 .card{
   width: 300px;
-  margin-left: 10%;
+  margin-left: 6%;
   margin-top: 30px;
 }
-
+.cc{
+  margin-top: 200px;
 }
 
+}
 
 
 .resp{
