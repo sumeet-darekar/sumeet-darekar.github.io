@@ -74,7 +74,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .blur-background {
-    background: url('https://www.pinterest.com/pin/469359592418577317/');
+    background: url('https://img.freepik.com/free-photo/dark-grunge-texture_1048-11833.jpg?w=740&t=st=1702895416~exp=1702896016~hmac=c4593709c32ebcd4ccd57ebe5ab86c2eedf26bd5c0afb96aceba1bd272adf094');
     background-size: cover;
     filter: blur(1px);
     position: fixed;
