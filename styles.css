@@ -74,7 +74,7 @@ a:hover {
 
 @media only screen and (max-width: 600px) {
   .blur-background {
-    background: url('https://cdn.pixabay.com/photo/2020/12/20/04/06/man-5846064_1280.jpg');
+    background: url('https://unsplash.com/photos/black-computer-keyboard-on-black-surface-u-n1AFjUclo');
     background-size: cover;
     filter: blur(1px);
     position: fixed;
