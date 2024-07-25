@@ -13,13 +13,13 @@
       <div class="logo">Sumeet Darekar</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience ">Tech stag</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
+    <div class="hidden-on-large">
     <nav id="hamburger-nav">
       <div class="logo">Sumeet Darekar</div>
       <div class="hamburger-menu">
@@ -28,14 +28,14 @@
           <span></span>
           <span></span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="menu-links " style="margin-top: 70px;">
+          <p style="padding-bottom: 5px;"><a href="#experience" onclick="toggleMenu()">Technologies</a></p>
+          <p style="padding-bottom: 5px;"><a href="#projects" onclick="toggleMenu()">Projects</a></p>
+          <p style="padding-bottom: 5px;"><a href="#contact" onclick="toggleMenu()">Contact</a></p>
         </div>
       </div>
     </nav>
+  </div>
     <section id="profile">
       
       <div class="section__text">
@@ -48,7 +48,7 @@
             class="btn btn-color-2"
             onclick="window.open('./assets/Sumeet_darekar_Resume.pdf')"
           >
-            Download CV
+            Resume
           </button>
           <button class="btn btn-color-1" onclick="location.href='#contact'">
             Contact Info
@@ -74,7 +74,8 @@
             onclick="location.href='https://github.com/sumeet-darekar'"
           />
          <img 
-         src="./assets/twitter.png"
+
+         src="./assets/twitter.jpg"
          alt="Twitter"
          class="icon"
          onclick="location.href='https://twitter.com/noobstain_/'" 
@@ -91,75 +92,17 @@
          class="icon"
          onclick="location.href='https://tryhackme.com/p/sumit2'" 
          />
+         <img 
+         src="./assets/hackerone.png"
+         alt="hackerone"
+         class="icon"
+         onclick="location.href='https://hackerone.com/noobstain'" 
+         />
         </div>
       </div>
     </section>
-    <section id="about">
-      <h1 class="title">Whoami</h1>
-      <p class="section__text__p1">Dumb hacker</p>
-      <div class="section-container">
-        
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2.5+ years <br />studying Security</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/bugs.jpg"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Bug Bounty [just started]</h3>
-              <p>Accepted : 3 </br>Dups: 3 Info: 4</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/ctf.jpg"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>CaptureTheFlag</h3>
-              <p>HackTheBox: Hacker</br>TryHackMe: OMNI [0x9]</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.E Bachelors Degree</br>[Artificial Intelligence 🙲 Data Science]</p>
-            </div>
-          </div>
-
-          <div class="text-container">
-            <p>
-              🔒 As a passionate security student, I dive deep into the world of cybersecurity, armed with knowledge in API testing, web testing,
-source code review, Python, C++, MySQL, and more. 🚀 </br></br>🌐 Beyond the theoretical realm, I actively engage in hands-on challenges, participating in Capture The Flag (CTF) competitions.
-These competitions allow me to apply my skills in real-world scenarios, keeping me sharp and up-to-date with the ever-evolving landscape of cybersecurity.</br></br>
-Certs:</br></br>
-<img src="./assets/isc2.jpg" alt="isc2" class="icon" onclick="location.href='https://drive.google.com/file/d/13aiCw1o_jKCZfTtnzv-g3SGLgR_OK-12/view?trk=public_profile_see-credential'" />&nbsp; ISC2 CC </br>
-<img src="./assets/fortinet_logo.jpg" alt="fortinet" class="icon" onclick="location.href='https://dochub.com/sumitdarekar2003/orO7lgeVLzWx9NrRjMP2p5/nse-3-certificate-pdf?dt=9WqMxV3E9T9wF4s8c-Dz&trk=public_profile_see-credential'" />&nbsp; NSE 3 Network Security Associate  
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='#experience'"
-      />
-    </section>
+    
     <section id="experience">
-      <p class="section__text__p1">dumb technologies that i know</p>
       <h1 class="title">Technical proficiency</h1>
       <div class="experience-details-container">
         <div class="about-containers">
@@ -315,7 +258,6 @@ Certs:</br></br>
       />
     </section>
     <section id="projects">
-      <p class="section__text__p1">sily projects made my me</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers" >
@@ -335,38 +277,32 @@ Certs:</br></br>
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/sumeet-darekar/stainql'"
-              >
-                OnGo
-              </button>
+              
             </div>
           </div>
+
+
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
-                alt="Project 2"
+                src="./assets/px.webp"
+                alt="Project 3"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">CodeView</h2>
+            <h2 class="experience-sub-title project-title">PostMessage-Xss</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/sumeet-darekar/codeview'"
+                onclick="location.href='https://github.com/sumeet-darekar/xss_postMessage_vuln_lab'"
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://codeview-six.vercel.app/'"
-              >
-                OnGo
-              </button>
+            
             </div>
           </div>
+
+          
         <div class="details-container color-container">
             <div class="article-container">
               <img
@@ -375,7 +311,7 @@ Certs:</br></br>
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">StainLang [Working]</h2>
+            <h2 class="experience-sub-title project-title">StainLang</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -383,12 +319,7 @@ Certs:</br></br>
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/sumeet-darekar/Stainlang'"
-              >
-                OnGo
-              </button>
+              
             </div>
           </div>
           <div class="details-container color-container">
@@ -407,12 +338,7 @@ Certs:</br></br>
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/sumeet-darekar/Port_Scanner'"
-              >
-                OnGo
-              </button>
+             
             </div>
           </div>
         </div>
@@ -434,7 +360,7 @@ Certs:</br></br>
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">sumeetdarekar2003@gmail.com</a></p>
+          <p><a href="mailto:sumeetdarekar2003@gmail.com">sumeetdarekar2003@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
@@ -447,17 +373,8 @@ Certs:</br></br>
       </div>
     </section>
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Sumeet darekar [noobstain_].</br> All Rights are gone somewhere else.</p>
+     
+      <p>Copyright &#169; 2024 Sumeet darekar [noobstain_].</p>
     </footer>
     <script src="script.js"></script>
   </body>
