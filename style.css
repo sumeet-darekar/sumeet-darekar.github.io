@@ -448,8 +448,8 @@ footer a:hover {
 
 @media screen and (max-width: 600px) {
   #profile {
-    height: 60vh;
-    margin-bottom: 4rem;
+    margin-top: 10vh;
+    
   }
 
   .hidden-on-large {
