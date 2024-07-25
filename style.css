@@ -162,11 +162,11 @@ section {
 }
 
 .section__text__p1 {
-  font-size: clamp(1.1rem, 4vw, 1.25rem);
+  font-size: clamp(2.1rem, 4vw, 2.25rem);
 }
 
 .section__text__p2 {
-  font-size: clamp(1.3rem, 4vw, 1.5rem);
+  font-size: clamp(2.0rem, 4vw, 1.5rem);
   margin-bottom: 1rem;
 }
 
@@ -175,7 +175,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 70vh;
+  height: 40vh;
 }
 
 .section__pic-container {
@@ -447,6 +447,10 @@ footer a:hover {
 }
 
 @media screen and (max-width: 600px) {
+  #profile {
+    height: 60vh;
+    margin-bottom: 4rem;
+  }
 
   .hidden-on-large {
     display: block;
