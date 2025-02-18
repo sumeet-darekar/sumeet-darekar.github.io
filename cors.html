@@ -10,8 +10,8 @@
   <pre id="output"></pre>
   <script>
     document.getElementById('testCors').addEventListener('click', function() {
-      fetch('https://www.firstcry.com/accountdetails', {
-        method: 'GET',
+      fetch('https://www.firstcry.com/offers/clublogo', {
+        method: 'POST',
         mode: 'cors', // Enforces CORS
       })
       .then(response => {
