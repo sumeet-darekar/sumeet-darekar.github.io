@@ -10,13 +10,9 @@
   <pre id="output"></pre>
   <script>
     document.getElementById('testCors').addEventListener('click', function() {
-      fetch('https://www.firstcry.com/fcfuserqrapi/hp/reorder/checkout/products', {
-        method: 'POST',
+      fetch('https://www.firstcry.com/accountdetails', {
+        method: 'GET',
         mode: 'cors', // Enforces CORS
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: '' // As specified: no payload
       })
       .then(response => {
         // Display the response status and headers if available
