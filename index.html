@@ -1,3 +1,254 @@
-<html>
-  <head><title>CTF challenge</title></head>
-  <body>FUZZ m3<body><html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinterest API Access Policy</title>
+  <style>
+    /* Basic Reset & Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #BD081C;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #fff;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #575757;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid #BD081C;
+      padding-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background: #f4f4f4;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        float: none;
+        text-align: center;
+      }
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pinterest API Access Policy</h1>
+    <p>Guidelines for Trial and Standard Access</p>
+  </header>
+  <nav>
+    <a href="#access-tiers">Access Tiers</a>
+    <a href="#rate-limits">Rate Limits</a>
+    <a href="#trial-access">Trial Access</a>
+    <a href="#upgrade">Upgrade to Standard</a>
+    <a href="#denials">Request Denials</a>
+    <a href="#privacy">Privacy Policy</a>
+  </nav>
+  <div class="container">
+    <!-- Access Tiers Overview -->
+    <section id="access-tiers">
+      <h2>Understanding Our Access Tiers</h2>
+      <p>
+        The Pinterest API v5 significantly increases the scope of what is possible for developers. If approved for API use, your app initially receives <strong>Trial access</strong>—ideal for exploring API features. To offer full Pinterest capabilities to your users, we recommend upgrading to <strong>Standard access</strong>.
+      </p>
+      <h3>Access Tiers Comparison</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity Type</th>
+            <th>Trial Access</th>
+            <th>Standard Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pin Analytics</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Reading ads</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Reading audiences</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Reading boards</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Reading Pins</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Reading catalogs</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Creating ads</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Creating audiences</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Creating boards</td>
+            <td>Yes (visible only to creator)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Creating Pins</td>
+            <td>Yes (visible only to creator)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Creating catalogs</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Rate Limits Section -->
+    <section id="rate-limits">
+      <h2>Rate Limits</h2>
+      <p>
+        The applicable rate limits depend on the API endpoint scopes you use. In general, <strong>Standard access</strong> offers higher and more granular limits compared to <strong>Trial access</strong>.
+      </p>
+      <ul>
+        <li>Apps with Trial access are rate limited based on calls per day/per app.</li>
+        <li>Apps with Standard access are rate limited at a granular level – calls per minute/per user/per app.</li>
+      </ul>
+      <p>
+        For complete details, refer to our documentation on <a href="https://developers.pinterest.com/docs/api/v5/#rate-limits" target="_blank">Rate Limits and Scopes</a>.
+      </p>
+    </section>
+
+    <!-- Trial Access Details -->
+    <section id="trial-access">
+      <h2>Pins and Boards Created with Trial Access</h2>
+      <p>
+        When using Trial access, any Pins and Boards created are visible only to the creator, appearing as Sandbox entities. This feature is designed so that testing the API does not impact your live Pinterest profile.
+      </p>
+      <p>
+        Learn more about our <a href="https://developers.pinterest.com/docs/api/v5/#sandbox" target="_blank">API Sandbox</a> capabilities.
+      </p>
+    </section>
+
+    <!-- Upgrade Instructions -->
+    <section id="upgrade">
+      <h2>Upgrade Your App to Standard Access</h2>
+      <p>
+        When you’re ready to move beyond testing and build a product for a wider audience, upgrading to Standard access is recommended. Before you submit your request, please ensure:
+      </p>
+      <ul>
+        <li>Your app is approved for Trial access and complies with our Developer Guidelines.</li>
+        <li>You have prepared a video recording demonstrating your app performing an action using the Pinterest API. The video must verify that the OAuth flow is correctly implemented without storing sensitive information.</li>
+      </ul>
+      <p>To upgrade:</p>
+      <ol>
+        <li>Visit the <strong>My apps</strong> section on your developer dashboard.</li>
+        <li>Click <strong>Upgrade</strong> on your app’s card (visible only for eligible apps).</li>
+        <li>Review and verify your previously submitted app details, including your use case and privacy policy link.</li>
+        <li>Upload your demo video showing the live Pinterest integration and proper OAuth authentication.</li>
+        <li>Submit your request.</li>
+      </ol>
+      <p>
+        You will receive an email notification once the review process is complete.
+      </p>
+    </section>
+
+    <!-- Request Denials Section -->
+    <section id="denials">
+      <h2>Why Requests May Get Denied</h2>
+      <h3>Trial Access Denials</h3>
+      <ul>
+        <li>
+          <strong>Privacy Policy:</strong> If the provided privacy policy link is inaccurate or inaccessible. Ensure it loads completely, is publicly accessible, and is hosted on a domain clearly associated with your organization.
+        </li>
+        <li>
+          <strong>App Description:</strong> If your app description is incomplete or unclear. Provide detailed information about your app’s purpose.
+        </li>
+      </ul>
+      <h3>Standard Access Denials</h3>
+      <ul>
+        <li>
+          <strong>Demo Video:</strong> If the demo does not show the OAuth authentication flow properly, or if it uses non-approved methods (e.g., collecting user login credentials or session cookies).
+        </li>
+        <li>
+          <strong>Live Integration:</strong> If the demo does not showcase a live integration with Pinterest. Generic demos or wireframes may be insufficient.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Privacy Policy Link -->
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>
+        For more details on data protection and privacy practices, please review the official <a href="https://www.pinterest.com/policies/privacy/" target="_blank">Pinterest Privacy Policy</a>.
+      </p>
+    </section>
+  </div>
+  <footer>
+    <p>&copy; 2025 Pinterest API Developer Portal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
