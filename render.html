@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live HTML Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: #1e1e1e;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .editor-panel, .preview-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 12px 20px;
+            font-weight: 600;
+            border-bottom: 2px solid #007acc;
+        }
+
+        #htmlInput {
+            flex: 1;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border: none;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            resize: none;
+            outline: none;
+            line-height: 1.6;
+        }
+
+        #htmlInput::placeholder {
+            color: #6a6a6a;
+        }
+
+        .preview-panel {
+            background: #fff;
+            border-left: 2px solid #2d2d2d;
+        }
+
+        #output {
+            flex: 1;
+            border: none;
+            background: white;
+        }
+
+        .divider {
+            width: 4px;
+            background: #2d2d2d;
+            cursor: col-resize;
+            transition: background 0.2s;
+        }
+
+        .divider:hover {
+            background: #007acc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .divider {
+                width: 100%;
+                height: 4px;
+                cursor: row-resize;
+            }
+
+            .preview-panel {
+                border-left: none;
+                border-top: 2px solid #2d2d2d;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="editor-panel">
+            <div class="panel-header">HTML Editor</div>
+            <textarea id="htmlInput" placeholder="Type your HTML here...
+Example:
+<h1>Hello World!</h1>
+<p style='color: blue;'>This is a live preview editor.</p>"></textarea>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="preview-panel">
+            <div class="panel-header">Live Preview</div>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const htmlInput = document.getElementById('htmlInput');
+        const output = document.getElementById('output');
+        const divider = document.querySelector('.divider');
+        const container = document.querySelector('.container');
+
+        function updatePreview() {
+            const iframe = output;
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(htmlInput.value);
+            iframeDoc.close();
+        }
+
+        htmlInput.addEventListener('input', updatePreview);
+
+        // Resizable panels
+        let isResizing = false;
+        let startX = 0;
+        let startWidth = 0;
+
+        divider.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startX = e.clientX;
+            const editorPanel = document.querySelector('.editor-panel');
+            startWidth = editorPanel.offsetWidth;
+            document.body.style.cursor = 'col-resize';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            
+            const editorPanel = document.querySelector('.editor-panel');
+            const delta = e.clientX - startX;
+            const newWidth = startWidth + delta;
+            const containerWidth = container.offsetWidth;
+            
+            if (newWidth > 200 && newWidth < containerWidth - 200) {
+                editorPanel.style.flex = `0 0 ${newWidth}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isResizing) {
+                isResizing = false;
+                document.body.style.cursor = 'default';
+            }
+        });
+
+        // Initial render with placeholder example
+        updatePreview();
+    </script>
+</body>
+</html>
