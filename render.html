@@ -1,519 +1,505 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
+
+
 <head>
+
+
     <meta charset="UTF-8">
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Package Parser</title>
+
+
+    <title>Live HTML Preview</title>
+
+
     <style>
+
+
         * {
+
+
             margin: 0;
+
+
             padding: 0;
+
+
             box-sizing: border-box;
+
+
         }
+
+
+
+
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
+
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+            height: 100vh;
+
+
+            overflow: hidden;
+
+
+            background: #1e1e1e;
+
+
         }
+
+
+
+
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
 
-        .header {
-            border-bottom: 1px solid #ddd;
-            padding: 20px;
-            background: #fafafa;
-        }
 
-        .header h1 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .header p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .input-section {
-            margin-bottom: 20px;
-        }
-
-        .input-section label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        textarea {
-            width: 100%;
-            min-height: 120px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            resize: vertical;
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
-        }
-
-        .button-group {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+
+
+            height: 100vh;
+
+
         }
 
-        button {
-            padding: 8px 16px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
 
-        button:hover {
-            background: #555;
-        }
 
-        button:active {
-            background: #222;
-        }
 
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 13px;
-        }
 
-        .error {
-            background: #fef2f2;
-            color: #991b1b;
-            padding: 12px;
-            border-radius: 4px;
-            border-left: 3px solid #991b1b;
-            margin-bottom: 20px;
-            display: none;
-            font-size: 13px;
-        }
+        .editor-panel, .preview-panel {
 
-        .error.show {
-            display: block;
-        }
 
-        .results {
-            display: none;
-        }
-
-        .file-results {
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .file-header {
-            background: #fafafa;
-            padding: 12px 15px;
-            border-bottom: 1px solid #ddd;
-            font-weight: 500;
-            font-size: 13px;
-            word-break: break-all;
-        }
-
-        .file-content {
-            padding: 15px;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-weight: 500;
-            font-size: 13px;
-            margin-bottom: 10px;
-            color: #333;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
-        }
-
-        .packages-list {
-            display: grid;
-            gap: 8px;
-        }
-
-        .package-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 10px;
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 3px;
-            font-size: 13px;
-        }
-
-        .package-name {
-            font-family: 'Courier New', monospace;
-            word-break: break-all;
             flex: 1;
+
+
+            display: flex;
+
+
+            flex-direction: column;
+
+
         }
 
-        .package-version {
-            background: #e0e0e0;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 12px;
-            margin-left: 10px;
-            white-space: nowrap;
-            font-family: 'Courier New', monospace;
-        }
 
-        .empty-message {
-            color: #999;
-            font-size: 13px;
-            text-align: center;
-            padding: 15px;
-        }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 10px;
-            margin-bottom: 20px;
-        }
 
-        .stat-card {
-            background: #f9f9f9;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-            font-size: 13px;
-        }
 
-        .stat-number {
-            font-size: 22px;
+        .panel-header {
+
+
+            background: #2d2d2d;
+
+
+            color: #fff;
+
+
+            padding: 12px 20px;
+
+
             font-weight: 600;
-            color: #333;
+
+
+            border-bottom: 2px solid #007acc;
+
+
         }
 
-        .stat-label {
-            font-size: 11px;
-            color: #666;
-            margin-top: 5px;
+
+
+
+
+        #htmlInput {
+
+
+            flex: 1;
+
+
+            background: #1e1e1e;
+
+
+            color: #d4d4d4;
+
+
+            border: none;
+
+
+            padding: 20px;
+
+
+            font-family: 'Consolas', 'Monaco', monospace;
+
+
+            font-size: 14px;
+
+
+            resize: none;
+
+
+            outline: none;
+
+
+            line-height: 1.6;
+
+
         }
 
-        .help-text {
-            font-size: 12px;
-            color: #666;
-            margin-top: 8px;
+
+
+
+
+        #htmlInput::placeholder {
+
+
+            color: #6a6a6a;
+
+
         }
+
+
+
+
+
+        .preview-panel {
+
+
+            background: #fff;
+
+
+            border-left: 2px solid #2d2d2d;
+
+
+        }
+
+
+
+
+
+        #output {
+
+
+            flex: 1;
+
+
+            border: none;
+
+
+            background: white;
+
+
+        }
+
+
+
+
+
+        .divider {
+
+
+            width: 4px;
+
+
+            background: #2d2d2d;
+
+
+            cursor: col-resize;
+
+
+            transition: background 0.2s;
+
+
+        }
+
+
+
+
+
+        .divider:hover {
+
+
+            background: #007acc;
+
+
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+
+
+            .container {
+
+
+                flex-direction: column;
+
+
+            }
+
+
+
+
+
+            .divider {
+
+
+                width: 100%;
+
+
+                height: 4px;
+
+
+                cursor: row-resize;
+
+
+            }
+
+
+
+
+
+            .preview-panel {
+
+
+                border-left: none;
+
+
+                border-top: 2px solid #2d2d2d;
+
+
+            }
+
+
+        }
+
+
     </style>
+
+
 </head>
+
+
 <body>
+
+
     <div class="container">
-        <div class="header">
-            <h1>JavaScript Package Parser</h1>
-            <p>Bulk parse JavaScript files to detect npm, pip, and other packages</p>
+
+
+        <div class="editor-panel">
+
+
+            <div class="panel-header">HTML Editor</div>
+
+
+            <textarea id="htmlInput" placeholder="Type your HTML here...
+
+
+Example:
+
+
+<h1>Hello World!</h1>
+
+
+<p style='color: blue;'>This is a live preview editor.</p>"></textarea>
+
+
         </div>
 
-        <div class="content">
-            <div class="input-section">
-                <label>Enter JavaScript URLs (one per line):</label>
-                <textarea id="urlInput" placeholder="https://example.com/script1.js&#10;https://example.com/script2.js&#10;or paste raw JavaScript code"></textarea>
-                <div class="help-text">Enter URLs (one per line) or paste JavaScript code. Tool will parse all inputs and aggregate results.</div>
-                <div class="button-group">
-                    <button onclick="parseContent()">Parse All</button>
-                    <button onclick="clearAll()">Clear</button>
-                </div>
-            </div>
 
-            <div class="error" id="errorMsg"></div>
+        
 
-            <div class="loading" id="loading">
-                <p>Analyzing files...</p>
-            </div>
 
-            <div class="results" id="results">
-                <div style="margin-bottom: 20px;">
-                    <h3 style="font-size: 14px; margin-bottom: 10px;">Overall Statistics</h3>
-                    <div class="stats" id="stats"></div>
-                </div>
+        <div class="divider"></div>
 
-                <div id="filesResults"></div>
-            </div>
+
+        
+
+
+        <div class="preview-panel">
+
+
+            <div class="panel-header">Live Preview</div>
+
+
+            <iframe id="output"></iframe>
+
+
         </div>
+
+
     </div>
 
+
+
+
+
     <script>
-        const commonPublicPackages = new Set([
-            'react', 'vue', 'angular', 'svelte', 'express', 'next', 'nuxt', 'gatsby',
-            'axios', 'fetch', 'lodash', 'moment', 'date-fns', 'jquery', 'bootstrap',
-            'tailwind', 'webpack', 'vite', 'rollup', 'babel', 'eslint', 'prettier',
-            'typescript', 'redux', 'mobx', 'zustand', 'jotai', 'recoil',
-            'graphql', 'apollo', 'urql', 'relay', 'socket.io', 'ws',
-            'jest', 'vitest', 'mocha', 'chai', 'cypress', 'playwright', 'puppeteer',
-            'dotenv', 'cors', 'helmet', 'multer', 'bcrypt', 'jsonwebtoken',
-            'mongoose', 'sequelize', 'typeorm', 'prisma', 'knex',
-            'uuid', 'validator', 'qs', 'minimist', 'yargs', 'commander',
-            'chalk', 'ora', 'inquirer', 'fs-extra', 'glob', 'normalize-package-data',
-            'three', 'babylon', 'pixi', 'canvas', 'p5', 'd3', 'chart.js',
-            'imagemin', 'sharp', 'jimp', 'ffmpeg', 'ffprobe',
-            'nodemon', 'pm2', 'forever', 'concurrently', 'cross-env',
-            'numpy', 'pandas', 'scipy', 'scikit-learn', 'matplotlib', 'seaborn',
-            'django', 'flask', 'fastapi', 'starlette', 'tornado',
-            'requests', 'httpx', 'aiohttp', 'urllib3', 'beautifulsoup4',
-            'selenium', 'playwright', 'scrapy', 'bs4',
-            'tensorflow', 'torch', 'keras', 'jax', 'mxnet',
-            'sqlalchemy', 'psycopg2', 'pymongo', 'redis',
-            'pillow', 'opencv-python', 'imageio', 'scikit-image',
-            'flask-cors', 'flask-sqlalchemy', 'celery', 'rq',
-            'spring', 'hibernate', 'mybatis', 'jpa', 'junit', 'testng',
-            'apache', 'commons', 'guava', 'gson', 'jackson', 'xerces',
-            'dotnet', 'grpc', 'protobuf', 'thrift'
-        ]);
 
-        async function parseContent() {
-            const input = document.getElementById('urlInput').value.trim();
-            const errorMsg = document.getElementById('errorMsg');
-            const loading = document.getElementById('loading');
-            const results = document.getElementById('results');
 
-            errorMsg.classList.remove('show');
+        const htmlInput = document.getElementById('htmlInput');
 
-            if (!input) {
-                showError('Please enter URLs or code');
-                return;
+
+        const output = document.getElementById('output');
+
+
+        const divider = document.querySelector('.divider');
+
+
+        const container = document.querySelector('.container');
+
+
+
+
+
+        function updatePreview() {
+
+
+            const iframe = output;
+
+
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+
+            iframeDoc.open();
+
+
+            iframeDoc.write(htmlInput.value);
+
+
+            iframeDoc.close();
+
+
+        }
+
+
+
+
+
+        htmlInput.addEventListener('input', updatePreview);
+
+
+
+
+
+        // Resizable panels
+
+
+        let isResizing = false;
+
+
+        let startX = 0;
+
+
+        let startWidth = 0;
+
+
+
+
+
+        divider.addEventListener('mousedown', (e) => {
+
+
+            isResizing = true;
+
+
+            startX = e.clientX;
+
+
+            const editorPanel = document.querySelector('.editor-panel');
+
+
+            startWidth = editorPanel.offsetWidth;
+
+
+            document.body.style.cursor = 'col-resize';
+
+
+            e.preventDefault();
+
+
+        });
+
+
+
+
+
+        document.addEventListener('mousemove', (e) => {
+
+
+            if (!isResizing) return;
+
+
+            
+
+
+            const editorPanel = document.querySelector('.editor-panel');
+
+
+            const delta = e.clientX - startX;
+
+
+            const newWidth = startWidth + delta;
+
+
+            const containerWidth = container.offsetWidth;
+
+
+            
+
+
+            if (newWidth > 200 && newWidth < containerWidth - 200) {
+
+
+                editorPanel.style.flex = `0 0 ${newWidth}px`;
+
+
             }
 
-            loading.style.display = 'block';
-            results.style.display = 'none';
 
-            try {
-                const entries = input.split('\n').map(line => line.trim()).filter(line => line);
-                const allResults = [];
-                const aggregated = { available: new Map(), private: new Map() };
+        });
 
-                for (const entry of entries) {
-                    try {
-                        let jsContent;
 
-                        if (entry.startsWith('http://') || entry.startsWith('https://')) {
-                            jsContent = await fetchJSFile(entry);
-                        } else {
-                            jsContent = entry;
-                        }
 
-                        const packages = extractPackages(jsContent);
-                        allResults.push({ source: entry, packages });
 
-                        if (packages && packages.available) {
-                            packages.available.forEach((v, k) => aggregated.available.set(k, v));
-                        }
-                        if (packages && packages.private) {
-                            packages.private.forEach((v, k) => aggregated.private.set(k, v));
-                        }
-                    } catch (error) {
-                        allResults.push({ source: entry, error: error.message, packages: { available: new Map(), private: new Map() } });
-                    }
-                }
 
-                displayResults(allResults, aggregated);
-                loading.style.display = 'none';
-                results.style.display = 'block';
-            } catch (error) {
-                loading.style.display = 'none';
-                showError(error.message);
-            }
-        }
+        document.addEventListener('mouseup', () => {
 
-        async function fetchJSFile(url) {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            return await response.text();
-        }
 
-        function extractPackages(jsContent) {
-            const available = new Map();
-            const privatePackages = new Map();
+            if (isResizing) {
 
-            if (!jsContent || typeof jsContent !== 'string') {
-                return { available, private: privatePackages };
+
+                isResizing = false;
+
+
+                document.body.style.cursor = 'default';
+
+
             }
 
-            const patterns = [
-                /import\s+(?:(?:\{[^}]*\})|(?:\*\s+as\s+\w+)|(?:\w+))\s+from\s+['"]([^'"]+)['"]/g,
-                /require\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
-                /import\s+['"]([^'"]+)['"]/g,
-                /from\s+['"]([^'"]+)['"]/g,
-            ];
 
-            patterns.forEach(pattern => {
-                let match;
-                while ((match = pattern.exec(jsContent)) !== null) {
-                    const packagePath = match[1];
-                    const packageName = extractPackageName(packagePath);
-                    const version = extractVersion(jsContent, packagePath);
+        });
 
-                    if (packageName) {
-                        if (isPublicPackage(packageName)) {
-                            available.set(packageName, version);
-                        } else {
-                            privatePackages.set(packageName, version);
-                        }
-                    }
-                }
-            });
 
-            return { available, private: privatePackages };
-        }
 
-        function extractPackageName(packagePath) {
-            if (packagePath.startsWith('@')) {
-                const parts = packagePath.split('/').slice(0, 2).join('/');
-                return parts.split('?')[0];
-            }
 
-            const name = packagePath.split('/')[0].split('.')[0];
 
-            if (name.startsWith('.') || name === '' || name.includes('?')) {
-                return null;
-            }
+        // Initial render with placeholder example
 
-            return name;
-        }
 
-        function extractVersion(content, packagePath) {
-            const versionPattern = new RegExp(`["']${packagePath}@(\\d+\\.\\d+\\.\\d+[^"']*)['""]|["']${packagePath}\\s*v?\\s*(\\d+\\.\\d+\\.\\d+[^"']*)['""]`, 'i');
-            const match = content.match(versionPattern);
-            return match ? (match[1] || match[2]) : '';
-        }
+        updatePreview();
 
-        function isPublicPackage(packageName) {
-            const base = packageName.split('@').pop().split('/')[0];
-            return commonPublicPackages.has(base.toLowerCase());
-        }
 
-        function displayResults(allResults, aggregated) {
-            const totalAvailable = aggregated.available ? aggregated.available.size : 0;
-            const totalPrivate = aggregated.private ? aggregated.private.size : 0;
-
-            const statsHtml = `
-                <div class="stat-card">
-                    <div class="stat-number">${totalAvailable}</div>
-                    <div class="stat-label">Public Packages</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">${totalPrivate}</div>
-                    <div class="stat-label">Private Packages</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">${totalAvailable + totalPrivate}</div>
-                    <div class="stat-label">Total Unique</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">${allResults.length}</div>
-                    <div class="stat-label">Files Parsed</div>
-                </div>
-            `;
-            document.getElementById('stats').innerHTML = statsHtml;
-
-            let filesHtml = '';
-
-            allResults.forEach(result => {
-                const { source, packages, error } = result;
-
-                let fileContentHtml = '';
-
-                if (error) {
-                    fileContentHtml = `<div style="color: #666; font-size: 13px;">Error: ${escapeHtml(error)}</div>`;
-                } else {
-                    const availableSize = packages && packages.available ? packages.available.size : 0;
-                    const privateSize = packages && packages.private ? packages.private.size : 0;
-
-                    const availableHtml = availableSize > 0
-                        ? `<div class="section">
-                            <div class="section-title">Public Packages (${availableSize})</div>
-                            <div class="packages-list">
-                                ${Array.from(packages.available).map(([name, version]) => `
-                                    <div class="package-item">
-                                        <span class="package-name">${escapeHtml(name)}</span>
-                                        ${version ? `<span class="package-version">v${escapeHtml(version)}</span>` : ''}
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>`
-                        : '';
-
-                    const privateHtml = privateSize > 0
-                        ? `<div class="section">
-                            <div class="section-title">Private/Internal Packages (${privateSize})</div>
-                            <div class="packages-list">
-                                ${Array.from(packages.private).map(([name, version]) => `
-                                    <div class="package-item">
-                                        <span class="package-name">${escapeHtml(name)}</span>
-                                        ${version ? `<span class="package-version">v${escapeHtml(version)}</span>` : ''}
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>`
-                        : '';
-
-                    fileContentHtml = availableHtml || privateHtml || '<div class="empty-message">No packages found</div>';
-                }
-
-                filesHtml += `
-                    <div class="file-results">
-                        <div class="file-header">${escapeHtml(source)}</div>
-                        <div class="file-content">
-                            ${fileContentHtml}
-                        </div>
-                    </div>
-                `;
-            });
-
-            document.getElementById('filesResults').innerHTML = filesHtml;
-        }
-
-        function showError(message) {
-            const errorMsg = document.getElementById('errorMsg');
-            errorMsg.textContent = message;
-            errorMsg.classList.add('show');
-        }
-
-        function clearAll() {
-            document.getElementById('urlInput').value = '';
-            document.getElementById('errorMsg').classList.remove('show');
-            document.getElementById('results').style.display = 'none';
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
     </script>
+
+
 </body>
+
+
 </html>
