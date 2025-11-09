@@ -4,13 +4,8 @@ function toggleMenu() {
   const icon = document.querySelector(".hamburger-icon");
   menu.classList.toggle("open");
   icon.classList.toggle("open");
-}//test
-//daily1
-//timesdas
-//success
-
-
-//xcv
+}
+//js monitor
 
 
 
