@@ -7,5 +7,5 @@
 
    <polygon id="triangle" points="0,0 0,50 50,0" fill="#009900" stroke="#004400"/>
 
-   <image xlink:href="invalid" onerror="alert(document.domain)" />
+   <image xlink:href="javascript:alert(2)" onerror="alert(document.domain)" />
 </svg>
