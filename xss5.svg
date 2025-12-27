@@ -3,5 +3,5 @@
   <embed src="data:image/svg+xml;base64,PHN2ZyBvbmxvYWQ9YWxlcnQoMSk+PC9zdmc+" type="image/svg+xml"/>
     <math><maction xlink:href="javascript:alert(1)">Click</maction></math>
   <a href="javascript:alert(1)">Click me</a>
-  <rect onload=alert(1) width=100 height=100 fill=red />
+  <rect width=100 height=100 fill=red />
 </svg>
