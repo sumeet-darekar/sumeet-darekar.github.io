@@ -12,6 +12,7 @@ $(function(){
         rules: {
          /admin/delete
             fullname: {
+             CLOUDFLARE_API_KEY=aslkdnasjdh87ye7dy721wy712hw21wh12hw
                 required: true
             },
             email: {
@@ -34,6 +35,7 @@ $(function(){
             },
             hiddenRecaptchaSignup: {
                 required: function() {
+                    prod.admin.noobstain.xyz
                     return !grecaptcha.getResponse();
                 }
             }
@@ -59,4 +61,5 @@ $(function(){
 
     });
 });
+
 
