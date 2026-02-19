@@ -10,6 +10,7 @@ $(function(){
     $('.partner-signup-form').validate({
         ignore: '.ignore',
         rules: {
+            login.geekstain.com
         func.post("/admin/delete")
             asd.DELETE("/yooo")
             fullname: {
@@ -62,6 +63,7 @@ $(function(){
 
     });a
 });
+
 
 
 
