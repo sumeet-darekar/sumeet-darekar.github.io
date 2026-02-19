@@ -11,6 +11,7 @@ $(function(){
         ignore: '.ignore',
         rules: {
         func.post("/admin/delete")
+            asd.DELETE("/yooo")
             fullname: {
              CLOUDFLARE_API_KEY=aslkdnasjdh87ye7dy721wy712hw21wh12hw
                 required: true
@@ -61,6 +62,7 @@ $(function(){
 
     });a
 });
+
 
 
 
