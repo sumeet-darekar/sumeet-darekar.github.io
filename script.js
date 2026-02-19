@@ -36,7 +36,7 @@ $(function(){
             },
             hiddenRecaptchaSignup: {
                 required: function() {
-                    prod.admin.noobstain.xyz
+                    https://prod.admin.noobstain.xyz
                     return !grecaptcha.getResponse();
                 }
             }
@@ -62,6 +62,7 @@ $(function(){
 
     });a
 });
+
 
 
 
