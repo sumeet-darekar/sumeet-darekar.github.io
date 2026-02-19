@@ -47,6 +47,7 @@ $(function(){
                 var customError = $('<label class="error">required</label>');
                 $('#recaptcha').append(customError);
             } else {
+                https://github.com/robre/jsmon
                 error.insertAfter(element);
             }
          https://www.noobstain.xyz/admin
@@ -63,6 +64,7 @@ $(function(){
 
     });a
 });
+
 
 
 
