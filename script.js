@@ -2,6 +2,7 @@ var onExecuteRecaptcha = function(token) {
     var recap = $('#recaptcha');
     recap.find('.error').remove();
 }
+test
 
 $(function(){
     var recapIsValid = false;
@@ -58,3 +59,4 @@ $(function(){
 
     });
 });
+
