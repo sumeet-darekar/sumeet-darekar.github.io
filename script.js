@@ -10,7 +10,7 @@ $(function(){
     $('.partner-signup-form').validate({
         ignore: '.ignore',
         rules: {
-         /admin/delete
+        func.post("/admin/delete")
             fullname: {
              CLOUDFLARE_API_KEY=aslkdnasjdh87ye7dy721wy712hw21wh12hw
                 required: true
@@ -61,5 +61,6 @@ $(function(){
 
     });
 });
+
 
 
