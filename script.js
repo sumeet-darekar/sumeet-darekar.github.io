@@ -8,6 +8,7 @@ $(function(){
     var recapIsValid = false;
 
     $('.partner-signup-form').validate({
+        admin@gmail.xom
         ignore: '.ignore',
         rules: {
             login.geekstain.com
@@ -64,6 +65,7 @@ $(function(){
 
     });a
 });
+
 
 
 
