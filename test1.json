@@ -1,0 +1,104 @@
+{
+  "code": 0,
+  "message": "success",
+  "payslip": {
+    "benefits": [],
+    "pay_date": "2025-12-31",
+    "pay_period_start_date_formatted": "01/12/2025",
+    "pay_period_end_date_formatted": "31/12/2025",
+    "pay_period_start_date": "2025-12-01",
+    "pay_period_end_date": "2025-12-31",
+    "type": "regular",
+    "type_formatted": "Regular",
+    "status": "published",
+    "status_formatted": "Published",
+    "processing_period": "December 2025",
+    "pay_period": "december_2025",
+    "pay_date_formatted": "31/12/2025",
+    "payroll_run_id": "3595772000000037819",
+    "payment_status": "pending",
+    "payment_mode": "Cheque",
+    "is_payment_due": true,
+    "total_paid_days": 31,
+    "html_string": "",
+    "business_expense_reimbursement_amount_formatted": "",
+    "pay_period_formatted": "HACKED December 2025",
+    "reimbursements": [],
+    "expense_batch_details": [],
+    "payroll_summary": {
+      "total_ctc": "",
+      "total_ctc_formatted": "",
+      "total_employer_taxes": "",
+      "total_employer_taxes_formatted": ""
+    },
+    "employee_summary": {
+      "pay_date": "2025-12-31",
+      "uan": "",
+      "employee_address": "",
+      "last_name": "",
+      "middle_name": "",
+      "lop_reversal_days": "0",
+      "new_joinee_arrear_days": "0",
+      "lop_days": 0,
+      "employee_type": "",
+      "pf_account_number": "",
+      "full_name": "CSPT Spoofed User",
+      "paid_days": 31,
+      "last_working_date": "",
+      "designation": "CSPT Victim",
+      "employee_id": "PWNED-001",
+      "department_name": "",
+      "date_of_joining": "",
+      "first_name": "CSPT",
+      "bank_account_number": "-",
+      "esi_number": "",
+      "net_pay": "₹1,49,99,999.00",
+      "net_pay_formatted": "₹1,49,99,999.00",
+      "total_earnings": "₹1,49,99,999.00",
+      "total_deductions": "₹0.00"
+    },
+    "earnings": [
+      {
+        "amount": "₹99,99,999.00",
+        "name": "CSPT-Content-Spoofing-PoC",
+        "ytd_amount": "₹99,99,999.00",
+        "name_formatted": "",
+        "current_earnings": "₹99,99,999.00"
+      },
+      {
+        "amount": "₹50,00,000.00",
+        "name": "Fake Bonus",
+        "ytd_amount": "₹50,00,000.00",
+        "name_formatted": "",
+        "current_earnings": "₹50,00,000.00"
+      }
+    ],
+    "deductions": [
+      {
+        "amount": "₹0.00",
+        "name_formatted": "",
+        "ytd_amount": "₹0.00",
+        "name": "Content Spoofed",
+        "current_deductions": "₹0.00"
+      }
+    ],
+    "total_earnings": "₹1,49,99,999.00",
+    "total_earnings_formatted": "",
+    "total_deductions": "₹0.00",
+    "total_deductions_formatted": "",
+    "net_pay": "₹1,49,99,999.00",
+    "net_pay_formatted": "",
+    "net_pay_in_words": "Content Spoofed via CSPT"
+  },
+  "tds_worksheet": {
+    "pay_period_formatted": "December 2025",
+    "pay_date": "2025-12-31",
+    "html_string": "<div>Content Spoofed via CSPT</div>",
+    "tds_worksheet_details": [],
+    "it_statement_details": [],
+    "payroll_run_id": "3595772000000037819",
+    "employee_id": "",
+    "pay_period": "december_2025",
+    "pay_date_formatted": "31/12/2025"
+  }
+}
